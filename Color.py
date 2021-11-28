@@ -27,11 +27,13 @@ class Example(QDialog):
         self.repaint()
 
     def draw_flag(self, qp):
-        x = random.randint(1, 300)
-        y = random.randint(1, 300)
         r = random.randint(1, 250)
-        qp.setBrush(QColor(255, 252, 0))
-        # Рисуем прямоугольник заданной кистью
+        x = self.frameGeometry().width() // 2 - r
+        y = self.frameGeometry().height() // 2 - r
+        color_1 = random.randint(1, 255)
+        color_2 = random.randint(1, 255)
+        color_3 = random.randint(1, 255)
+        qp.setBrush(QColor(color_1, color_2, color_3))
         qp.drawEllipse(x, y, r, r)
 
 
